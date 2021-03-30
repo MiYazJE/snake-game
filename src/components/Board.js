@@ -3,8 +3,7 @@ import Cell from './Cell';
 import { spawnValidFruit } from '../helpers/';
 import useControls from '../hooks/useControls';
 
-const Board = () => {
-  const { stop } = useControls(moveSnake);
+const Board = ({ updateScore, saveScore }) => {
 
   const WIDTH = useMemo(() => 20, []);
   const HEIGHT = useMemo(() => 20, []);
@@ -21,6 +20,10 @@ const Board = () => {
     },
     {
       x: parseInt(WIDTH / 2) - 1,
+      y: parseInt(HEIGHT / 2),
+    },
+    {
+      x: parseInt(WIDTH / 2) - 2,
       y: parseInt(HEIGHT / 2),
     },
   ]);
@@ -58,11 +61,7 @@ const Board = () => {
     });
   }, [isSnake, isFruit, fruit, snake]);
 
-  useEffect(() => {
-    if (gameOver) stop();
-  }, [gameOver, stop]);
-
-  function moveSnake({ x, y }) {
+  const moveSnake = useCallback(({ x, y }) => {
     const headSnake = snake[0];
     const tail = snake[snake.length - 1];
 
@@ -85,10 +84,20 @@ const Board = () => {
 
     if (eatenFruit) {
       setFruit(spawnValidFruit(board))
+      updateScore(10)
       updatedSnake.push({ ...tail });
     }
     setSnake(updatedSnake);
-  }
+  }, [HEIGHT, WIDTH, board, isFruit, isSnake, snake, updateScore]);
+
+  const { stop } = useControls(moveSnake);
+
+  useEffect(() => {
+    if (gameOver) {
+      stop();
+      saveScore();
+    }
+  }, [gameOver, stop, saveScore]);
 
   return (
     <div className="board" style={stylesBoard}>

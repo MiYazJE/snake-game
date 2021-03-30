@@ -19,11 +19,10 @@ const useControls = (moveSnake) => {
   useEffect(() => {
 
     const onKeyPress = ({ key }) => {
-      if (!start) {
-        setStart(true);
-      }
       if (Object.keys(CONTROLS).includes(key)) {
-        moveSnake(CONTROLS[key]);
+        if (!start) {
+          setStart(true);
+        }
         setDirection(CONTROLS[key]);
       }
     }
@@ -40,7 +39,7 @@ const useControls = (moveSnake) => {
       if (start) {
         moveSnake({ ...direction });
       }
-    }, 200);
+    }, 100);
 
     return () => {
       console.log('clearing interval')

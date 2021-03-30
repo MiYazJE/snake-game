@@ -1,6 +1,11 @@
 * {
   padding: 0px;
   margin: 0px;
+  font-family: monospace;
+}
+
+h1 {
+  font-size: 50px;
 }
 
 .app {
@@ -13,6 +18,7 @@
 }
 
 .board {
+  border-radius: 10px;
   width: 50%;
   max-width: 200px;
   display: grid;
@@ -33,4 +39,31 @@
 
 .fruit {
   background-color: red;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.score {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.currentPoints span {
+  color: blue
+}
+
+.maxPoints span {
+  color: red;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
