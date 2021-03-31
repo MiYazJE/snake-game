@@ -11,7 +11,7 @@ const useScore = () => {
   };
 
   const getMaxScore = () => {
-    return JSON.parse(window.localStorage.getItem('score')).score || 0;
+    return JSON.parse(window.localStorage.getItem('score'))?.score || 0;
   };
 
   return {
