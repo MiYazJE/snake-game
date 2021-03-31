@@ -11,6 +11,7 @@ const Board = ({ updateScore, saveScore }) => {
     gridTemplateRows: `repeat(${WIDTH}, 1fr)`,
     gridTemplateColumns: `repeat(${HEIGHT}, 1fr)`,
     maxWidth: `${WIDTH * 25}px`,
+    minWidth: `${WIDTH * 25}px`,
   }), [WIDTH, HEIGHT]);
 
   const [snake, setSnake] = useState([
@@ -101,9 +102,9 @@ const Board = ({ updateScore, saveScore }) => {
 
   return (
     <div className="board" style={stylesBoard}>
-      {board.map(row => [...row.map(cell => (
+      {board.map((row, i) => [...row.map((cell, j) => (
         <Cell
-          key={cell?.id}
+          key={cell?.id || (i * j + j)}
           {...cell}
         />
       ))])}
