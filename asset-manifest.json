@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MiYazJE/snake-game/static/css/main.4519547f.chunk.css",
-    "main.js": "/MiYazJE/snake-game/static/js/main.cb507d0d.chunk.js",
-    "main.js.map": "/MiYazJE/snake-game/static/js/main.cb507d0d.chunk.js.map",
+    "main.js": "/MiYazJE/snake-game/static/js/main.f5788054.chunk.js",
+    "main.js.map": "/MiYazJE/snake-game/static/js/main.f5788054.chunk.js.map",
     "runtime-main.js": "/MiYazJE/snake-game/static/js/runtime-main.7807516a.js",
     "runtime-main.js.map": "/MiYazJE/snake-game/static/js/runtime-main.7807516a.js.map",
     "static/js/2.7b6654f5.chunk.js": "/MiYazJE/snake-game/static/js/2.7b6654f5.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.7807516a.js",
     "static/js/2.7b6654f5.chunk.js",
     "static/css/main.4519547f.chunk.css",
-    "static/js/main.cb507d0d.chunk.js"
+    "static/js/main.f5788054.chunk.js"
   ]
 }
